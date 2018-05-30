@@ -9,4 +9,14 @@ end reg;
 
 architecture behave of reg is
 begin
+	process(clk,reset,en)
+		begin
+			if reset = '0' then            
+				q <= "00000000";
+			elsif clk'event and clk = '1' then
+				if en = '1' then
+					q <= d;
+				end if;
+			end if;
+	end process;
 end behave;
