@@ -10,4 +10,17 @@ end ir;
 
 architecture behave of ir is
 begin
+	process(clk,reset)
+	begin
+		if reset = '0' then            
+          q <= "00000000";
+        elsif clk'event and clk = '1' then
+			case rec is
+				when "10"=>
+				q <= mem_data;
+				when others=>
+				null;
+			end case;		
+        end if;
+	end process;
 end behave;
