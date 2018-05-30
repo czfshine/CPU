@@ -8,5 +8,9 @@ end t2;
 
 architecture behave of t2 is
 begin
-
+	
+	process(offset_8)
+	begin
+		offset_16<=offset_8;
+	end process;
 end behave;
