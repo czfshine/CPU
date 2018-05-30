@@ -10,4 +10,14 @@ end pc;
 
 architecture behave of pc is
 begin
+	process(clk,reset)
+	begin
+		if reset = '0' then            
+			q <= "00000000";
+        elsif clk'event and clk = '1' then
+			if en = '1' then
+				q <= alu_out;
+			end if;
+        end if;
+	end process;
 end behave;
