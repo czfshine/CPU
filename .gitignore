@@ -1,0 +1,10 @@
+
+incremental_db/
+db/
+*.rpt
+*.summary
+*.smsg
+*.done
+*.bak
+*.pof
+*.sof
